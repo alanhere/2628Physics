@@ -213,3 +213,7 @@ dialog .btn { background: var(--paper); }
   font: 500 1rem var(--sans); border: 2px solid var(--ink); border-radius: 4px 10px 5px 9px / 9px 5px 10px 4px;
 }
 .subtabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+.actions + .photos { margin-top: 0.9rem; }
+
+.videoitem + .videoitem { margin-top: 22px; }
