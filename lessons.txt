@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------
+# HOW TO ADD A LESSON
+# Copy a whole lesson from below, paste it anywhere in this file, then change the words.
+# Lines that start with # are notes. The website ignores them.
+# Every lesson starts with a date line. Write dates as year-month-day, like 2026-10-08.
+# The order of lessons in this file does not matter. The website sorts them by date.
+#
+# date: 2026-10-08
+# title: Name of the lesson
+# homework: Exercise 7C, questions 1 to 10 | https://drive.google.com/file/d/XXXX/view?usp=sharing
+# photos: 2026-10-08-1.jpg, 2026-10-08-2.jpg
+# solutions: https://drive.google.com/file/d/XXXX/view?usp=sharing
+# video: Worked answers to questions 4 to 10 | https://www.youtube.com/watch?v=XXXXXXXXXXX
+# notes: Guided notes, chapter 7 | chapter-7.pdf
+#
+# Homework and solutions are Google Drive share links. Paste the whole link.
+# photos can be file names from the photos folder, like 2026-10-08-1.jpg, or Drive links.
+# notes can be a PDF file name from the notes folder, like chapter-7.pdf, or a Drive link.
+#
+# Optional: link each question separately, as well as or instead of one solutions link.
+# q: 1 | https://link-to-question-1
+# q: 2 | https://link-to-question-2
+#
+# Everything after the first colon is the content. Keep each line on one line.
+# Delete the sample lessons below once you have added your own.
+# ---------------------------------------------------------------
+
+date: 2026-10-08
+title: Series and parallel circuits
+homework: Exercise 5C, questions 1 to 8 | https://example.com/homework
+photos: sample-board-1.jpg, sample-board-2.jpg, sample-board-3.jpg
+solutions: https://example.com/solutions
+q: 1 | https://example.com/q1
+q: 2 | https://example.com/q2
+q: 3 | https://example.com/q3
+q: 4 | https://example.com/q4
+video: Worked answers to questions 5 to 8 | https://www.youtube.com/
+
+date: 2026-10-07
+title: Current and charge
+homework: Exercise 5B, questions 1 to 6 | https://example.com/homework
+photos: sample-board-1.jpg, sample-board-2.jpg
+solutions: https://example.com/solutions
+video: Charge calculations step by step | https://www.youtube.com/
+
+date: 2026-10-06
+title: Newton's second law
+homework: Exercise 4D, questions 1 to 10 | https://example.com/homework
+photos: sample-board-1.jpg
+solutions: https://example.com/solutions
+video: Using F = ma in three steps | https://www.youtube.com/
+
+date: 2026-10-02
+title: Friction and drag
+homework: Exercise 4C, questions 1 to 7 | https://example.com/homework
+photos: sample-board-1.jpg, sample-board-2.jpg
+solutions: https://example.com/solutions
+
+date: 2026-10-01
+title: Acceleration
+homework: Exercise 3B, questions 1 to 8 | https://example.com/homework
+photos: sample-board-1.jpg
+solutions: https://example.com/solutions
+video: Acceleration questions 4 to 8 | https://www.youtube.com/
+
+date: 2026-09-30
+title: Distance-time graphs
+homework: Exercise 3A, questions 1 to 6 | https://example.com/homework
+photos: sample-board-1.jpg, sample-board-2.jpg
+solutions: https://example.com/solutions

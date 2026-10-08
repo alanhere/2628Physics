@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------
+# HOW TO ADD AN INVESTIGATION
+# Copy a whole investigation from below, paste it anywhere in this file, then change the words.
+# Lines that start with # are notes. The website ignores them.
+#
+# date: 2026-10-02
+# title: Stretching a spring
+# aim: To find how the extension of a spring depends on the force pulling it.
+# equipment: Spring; Clamp stand; Metre rule; Slotted masses
+# method:
+# - Hang the spring from the clamp and measure its length.
+# - Add one mass and measure the new length.
+# photos: 2026-10-02-setup.jpg
+# table: Extension (cm) | Force (N)
+# row: 0 | 0
+# row: 1.9 | 1
+# row: 4.1 | 2
+# graph: yes
+# fit: origin
+# conclusion: Force is directly proportional to extension.
+#
+# Equipment items are separated by semicolons. Method steps each start with a dash.
+# Table columns are separated by the | symbol. The first column goes along the bottom of the graph.
+# graph: yes draws a graph from the table. Leave that line out for no graph.
+# fit: origin draws a straight line through 0,0. fit: line draws the best straight line. fit: none shows points only.
+# ---------------------------------------------------------------
+
+date: 2026-10-02
+title: Stretching a spring
+aim: To find how the extension of a spring depends on the force pulling it.
+equipment: Spring; Clamp stand and clamp; Metre rule; Slotted masses, 100 g each; Paper-clip pointer
+method:
+- Hang the spring from the clamp and measure its length with no mass.
+- Add one 100 g mass (a force of 1 N) and measure the new length.
+- Add a further mass and repeat until you reach 5 N.
+- Subtract the original length from each reading to get the extension.
+photos: sample-setup.jpg
+table: Extension (cm) | Force (N)
+row: 0 | 0
+row: 1.9 | 1
+row: 4.1 | 2
+row: 6.0 | 3
+row: 8.2 | 4
+row: 10.1 | 5
+graph: yes
+fit: origin
+conclusion: Force is directly proportional to extension up to 10 cm. The gradient gives a spring constant of about 50 N/m.
+
+date: 2026-09-26
+title: Trolley down a ramp
+aim: To measure how the acceleration of a trolley changes with the height of the ramp.
+equipment: Trolley; Ramp and books; Light gate and timer; Metre rule
+method:
+- Set the ramp to a height of 5 cm.
+- Release the trolley from the same mark each time.
+- Record the acceleration from the light gate.
+- Raise the ramp by 5 cm and repeat.
+table: Ramp height (cm) | Acceleration (m/s²)
+row: 5 | 0.4
+row: 10 | 0.9
+row: 15 | 1.3
+row: 20 | 1.8
+graph: yes
+fit: line
+conclusion: Acceleration increases with the height of the ramp. Doubling the height roughly doubles the acceleration.
+
+date: 2026-09-12
+title: Heating an aluminium block
+aim: To find the specific heat capacity of aluminium.
+equipment: 1 kg aluminium block with two holes; 12 V heater and thermometer; Joulemeter; Insulating cloth
+method:
+- Place the heater and thermometer in the block and wrap it in cloth.
+- Record the starting temperature and joulemeter reading.
+- Switch on the heater and record every 100 seconds.
+- Plot energy supplied against temperature rise.
+table: Time (s) | Temperature (°C)
+row: 0 | 20
+row: 100 | 25
+row: 200 | 30
+row: 300 | 36
+row: 400 | 41
+conclusion: The temperature rose steadily. Heat lost to the air means the measured value is slightly too high.

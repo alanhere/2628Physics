@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------
+# HOW TO ADD A RESEARCH PAGE
+# Copy a whole entry from below, paste it anywhere in this file, then change the words.
+#
+# date: 2026-10-04
+# title: Why is the sky blue?
+# question: The question being answered.
+# found: First paragraph of what was found.
+# found: Second paragraph.
+# sources: Name of the source | https://link
+# sources: Another source | https://link
+# further: A challenge for students who want to go further.
+#
+# Repeat found: and sources: as many times as you need.
+# ---------------------------------------------------------------
+
+date: 2026-10-04
+title: Why is the sky blue?
+question: Why does the sky look blue in the day but red at sunset?
+found: Sunlight contains every colour. Air molecules scatter short wavelengths, such as blue, much more than long wavelengths, such as red.
+found: At sunset the light travels through more air. Most of the blue is scattered out of the beam, leaving the reds and oranges.
+sources: Sample source 1: textbook chapter on light | https://example.com/source1
+sources: Sample source 2: science museum article | https://example.com/source2
+further: Use the same idea to explain why distant mountains look blue-grey.
+
+date: 2026-09-28
+title: How does a wind turbine make electricity?
+question: How is the movement of the wind turned into electrical energy?
+found: Moving air turns the blades, which turn a shaft connected to a generator.
+found: Inside the generator, magnets spin past coils of wire. This changes the magnetic field through the coils and induces a voltage.
+sources: Sample source 1: energy company guide | https://example.com/source1
+further: Find out why turbine blades are longer on offshore wind farms.
+
+date: 2026-09-14
+title: How do seat belts reduce injury?
+question: Why does wearing a seat belt make a crash less harmful?
+found: In a crash, a passenger keeps moving at the car's original speed until a force stops them.
+found: A seat belt stretches slightly, which makes the stopping time longer. A longer time means a smaller force, because force equals the change in momentum divided by time.
+sources: Sample source 1: road safety website | https://example.com/source1
+further: Look up how crumple zones use the same idea.

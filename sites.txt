@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------
+# HOW TO ADD A USEFUL SITE
+# Copy a whole entry from below, paste it anywhere in this file, then change the words.
+# Sites are grouped under headings. Use exactly the same heading each time.
+#
+# date: 2026-09-10
+# title: Name of the website
+# topic: Simulations
+# about: One line on what it is good for.
+# link: Visit site | https://www.example.com
+#
+# date sets the order within a heading. It is not shown.
+# The topic line is the heading, for example Simulations, Practice questions or Tools.
+# Add a second link line for a second button if you need one, such as a particular page.
+# ---------------------------------------------------------------
+
+date: 2026-09-01
+title: PhET Interactive Simulations
+topic: Simulations
+about: Free interactive simulations from the University of Colorado Boulder. Good for forces, circuits and waves.
+link: Visit site | https://phet.colorado.edu
+
+date: 2026-09-02
+title: Desmos graphing calculator
+topic: Tools
+about: A free online graphing calculator for plotting data and checking graphs.
+link: Visit site | https://www.desmos.com/calculator
+
+date: 2026-09-03
+title: Isaac Physics
+topic: Practice questions
+about: Free physics questions with hints and guidance, arranged by topic.
+link: Visit site | https://isaacphysics.org
+
+date: 2026-09-04
+title: Physics & Maths Tutor
+topic: Practice questions
+about: Free past papers and revision notes.
+link: Visit site | https://www.physicsandmathstutor.com
+
+date: 2026-09-05
+title: The Physics Classroom
+topic: Revision and videos
+about: Clear written explanations with interactive practice.
+link: Visit site | https://www.physicsclassroom.com
+
+date: 2026-09-06
+title: Khan Academy Physics
+topic: Revision and videos
+about: Free video lessons and practice questions.
+link: Visit site | https://www.khanacademy.org/science/physics
+
+date: 2026-09-07
+title: BBC Bitesize Physics
+topic: Revision and videos
+about: Short revision guides, videos and quizzes.
+link: Visit site | https://www.bbc.co.uk/bitesize

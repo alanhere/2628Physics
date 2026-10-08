@@ -1,0 +1,215 @@
+/* Exercise-book design: squared paper, ink blue, red pen.
+   Colours are at the top. Change them here if you ever want to. */
+:root {
+  --ink: var(--ink-set, #1D3A9C);
+  --pen: #D3242B;
+  --paper: #FDFEFF;
+  --grid: #E3ECF5;
+  --text: #1B2236;
+  --muted: #5A6577;
+  --card: #FDFEFF;
+  --rule: #B8CCE0;
+  --tint: #EEF3F9;
+  --ph: #E8EEF5;
+  --hand: "Patrick Hand", "Segoe Print", "Bradley Hand", cursive;
+  --sans: "Lexend", "Segoe UI", system-ui, sans-serif;
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #A9BCFF; --pen: #FF7B80; --paper: #141A24; --grid: #1E2837; --text: #E6EAF2;
+    --muted: #9AA5B8; --card: #19212E; --rule: #34445C; --tint: #1E2837; --ph: #1E2837;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+main {
+  max-width: 46rem; margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+  padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+}
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--pen); outline-offset: 2px; }
+
+/* Header */
+header { padding: 0.5rem 0 1.25rem 3.1rem; }
+h1 {
+  font-family: var(--hand); font-weight: 400; margin: 0; color: var(--ink);
+  font-size: clamp(2.5rem, 11vw, 3.9rem); line-height: 1.05;
+  transform: rotate(-1deg); transform-origin: left;
+}
+h1 span { display: inline-block; border-bottom: 3px solid var(--pen); padding-bottom: 2px; }
+header p { margin: 0.9rem 0 0; color: var(--muted); max-width: 30rem; }
+
+/* Tabs (hidden automatically when a site has only one) */
+.tabs { display: flex; flex-wrap: wrap; gap: 0 1.5rem; margin: 0 0 1.4rem 3.1rem; }
+.tabs button {
+  flex: none; min-height: 48px; padding: 0.3rem 0; background: none; border: 0; cursor: pointer;
+  border-bottom: 3px solid transparent; font-family: var(--hand); font-size: 1.5rem; line-height: 1.2; color: var(--muted);
+}
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--pen); }
+
+/* Timeline: the red margin line */
+.timeline { position: relative; padding-left: 3.1rem; margin: 0; list-style: none; }
+.timeline::before {
+  content: ""; position: absolute; left: 1.3rem; top: -0.5rem; bottom: 0; width: 2px; background: var(--pen); opacity: 0.85;
+}
+.ghead { margin: 1.5rem 0 0.7rem; }
+.ghead:first-child { margin-top: 0; }
+.ghead h2 {
+  display: inline-block; margin: 0; padding: 0 0.5rem 0 0.2rem; background: var(--paper);
+  font-family: var(--hand); font-weight: 400; font-size: 1.5rem; line-height: 1.2; color: var(--muted);
+}
+.lesson { position: relative; margin: 0 0 1.1rem; }
+.lesson::before {
+  content: ""; position: absolute; left: -2.2rem; top: 1.2rem; width: 0.9rem; height: 0.9rem;
+  border-radius: 50%; background: var(--paper); border: 2px solid var(--pen);
+}
+.lesson:has(details[open])::before { background: var(--pen); }
+
+details {
+  background: var(--card); border: 2px solid var(--ink);
+  border-radius: 6px 14px 8px 12px / 12px 7px 13px 8px;
+}
+summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.85rem 1rem; min-height: 58px;
+}
+summary::-webkit-details-marker { display: none; }
+.date { font-family: var(--hand); font-size: 1.5rem; line-height: 1.1; color: var(--ink); white-space: nowrap; }
+.topic { flex: 1; min-width: 0; font-weight: 500; line-height: 1.3; }
+.chev {
+  width: 1rem; height: 1rem; flex: none; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+  transform: rotate(45deg) translate(-2px, -2px); transition: transform 0.2s;
+}
+details[open] .chev { transform: rotate(225deg) translate(-2px, -2px); }
+.new {
+  font-family: var(--hand); font-size: 1.05rem; color: var(--pen); border: 2px solid var(--pen);
+  border-radius: 50%; padding: 0 0.6rem; transform: rotate(-4deg); flex: none;
+}
+
+.body { padding: 0 1rem 1.25rem; }
+.block { padding-top: 1.1rem; margin-top: 1.1rem; border-top: 2px dashed var(--rule); }
+.block:first-child { border-top: 0; margin-top: 0; padding-top: 0.25rem; }
+h3 { font-family: var(--hand); font-weight: 400; font-size: 1.55rem; line-height: 1.15; margin: 0 0 0.4rem; color: var(--ink); }
+.block p { margin: 0 0 0.8rem; }
+.block p.sub, .muted { color: var(--muted); }
+.block ul.plain, .block ol { margin: 0 0 0.6rem; padding-left: 1.3rem; }
+.block li { margin-bottom: 0.3rem; }
+.block a:not(.btn):not(.q) { color: var(--ink); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.6rem 1.1rem;
+  font: 500 1rem var(--sans); text-decoration: none; color: var(--ink); background: transparent; cursor: pointer;
+  border: 2px solid var(--ink); border-radius: 4px 10px 5px 9px / 9px 5px 10px 4px;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn.main { background: var(--ink); color: var(--paper); }
+.btn.main:hover { background: transparent; color: var(--ink); }
+.btn + .btn { margin-left: 0.5rem; }
+
+/* Photos */
+.photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.9rem; }
+.ph { padding: 0; border: 0; background: none; cursor: pointer; text-align: left; display: block; }
+.ph .frame {
+  display: grid; place-items: center; min-height: 9rem; border: 5px solid #d9cdb4; border-radius: 3px;
+  overflow: hidden; background: var(--ph);
+}
+.ph img { display: block; width: 100%; height: auto; }
+.ph .miss { display: none; padding: 1rem; text-align: center; color: var(--muted); font-size: 0.9rem; }
+.ph.missing img { display: none; }
+.ph.missing .miss { display: block; }
+.ph.missing { cursor: default; }
+.cap { display: block; font-family: var(--hand); font-size: 1.15rem; margin-top: 0.3rem; color: var(--muted); }
+
+/* Solutions: marked in red pen */
+.marks { list-style: none; padding: 0; margin: 0 0 0.9rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.block .marks li { margin: 0; }
+a.q {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.3rem; min-width: 52px; min-height: 46px; padding: 0.2rem 0.85rem;
+  font-family: var(--hand); font-size: 1.3rem; text-decoration: none; color: var(--pen);
+  border: 2px solid var(--pen); border-radius: 50% / 60%;
+}
+a.q:hover { background: var(--pen); color: var(--paper); }
+.tick { width: 1rem; height: 1rem; }
+
+/* Video */
+.vthumb {
+  position: relative; display: grid; place-items: center; width: 100%; max-width: 34rem; aspect-ratio: 16/9; padding: 0;
+  border: 5px solid #d9cdb4; border-radius: 3px; cursor: pointer; overflow: hidden;
+  background: #26303d var(--thumb, none) center / cover no-repeat;
+}
+.vthumb .play { display: grid; place-items: center; width: 4rem; height: 4rem; border-radius: 50%; background: rgba(20, 26, 36, 0.75); border: 2px solid #fff; }
+.vthumb svg { width: 1.7rem; height: 1.7rem; fill: #fff; margin-left: 0.2rem; }
+.vframe { width: 100%; max-width: 34rem; aspect-ratio: 16/9; border: 5px solid #d9cdb4; border-radius: 3px; overflow: hidden; background: #000; }
+.vframe iframe { width: 100%; height: 100%; border: 0; display: block; }
+.vcap { margin: 0.5rem 0 0.2rem; }
+
+/* Tables and graphs */
+.tablewrap { overflow-x: auto; margin: 0 0 0.9rem; }
+table { border-collapse: collapse; min-width: 16rem; font-variant-numeric: tabular-nums; background: var(--card); }
+th, td { border: 2px solid var(--rule); padding: 0.4rem 1rem; text-align: left; }
+th { background: var(--tint); font-weight: 500; }
+.graph { max-width: 28rem; margin: 0 0 0.9rem; border: 2px solid var(--rule); background: var(--card); border-radius: 4px; padding: 0.3rem; }
+.graph svg { display: block; width: 100%; height: auto; }
+.g-grid { stroke: var(--grid); stroke-width: 1.5; }
+.g-axis { stroke: var(--text); stroke-width: 1.5; }
+.g-text { fill: var(--text); font: 12px var(--sans); }
+.g-pt { stroke: var(--pen); stroke-width: 2.5; fill: none; stroke-linecap: round; }
+.g-fit { stroke: var(--ink); stroke-width: 2; fill: none; }
+
+.more {
+  display: block; margin: 0.4rem 0 0 3.1rem; background: none; border: 2px solid var(--ink); color: var(--ink); cursor: pointer;
+  font: 500 1rem var(--sans); min-height: 48px; padding: 0.5rem 1.1rem; border-radius: 4px 10px 5px 9px / 9px 5px 10px 4px;
+}
+.more:hover { background: var(--ink); color: var(--paper); }
+.note { margin: 1rem 0 0 3.1rem; color: var(--muted); }
+.note.warn { color: var(--pen); }
+
+dialog { border: 0; padding: 0; background: transparent; max-width: 96vw; width: 52rem; }
+dialog::backdrop { background: rgba(10, 14, 22, 0.82); }
+dialog form { display: flex; justify-content: flex-end; margin-bottom: 0.5rem; }
+dialog img { display: block; width: 100%; height: auto; border: 8px solid #d9cdb4; border-radius: 3px; background: var(--paper); }
+dialog .btn { background: var(--paper); }
+
+@media (min-width: 40rem) {
+  main { padding-top: calc(2.5rem + env(safe-area-inset-top, 0px)); }
+  .date { font-size: 1.7rem; }
+  summary { padding: 1rem 1.25rem; }
+  .body { padding: 0 1.25rem 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+
+/* Guided notes cards */
+.card {
+  background: var(--card); border: 2px solid var(--ink); padding: 1rem 1.1rem;
+  border-radius: 6px 14px 8px 12px / 12px 7px 13px 8px;
+}
+.card b { display: block; font-weight: 500; line-height: 1.35; }
+.card p { margin: 0.25rem 0 0; color: var(--muted); }
+.card .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.9rem; }
+.card .actions .btn + .btn { margin-left: 0; }
+
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.actions .btn + .btn { margin-left: 0; }
+
+/* Switch between sections inside a tab (Study) */
+.subtabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.2rem 3.1rem; }
+.subtabs button {
+  min-height: 44px; padding: 0.3rem 1rem; cursor: pointer; background: transparent; color: var(--ink);
+  font: 500 1rem var(--sans); border: 2px solid var(--ink); border-radius: 4px 10px 5px 9px / 9px 5px 10px 4px;
+}
+.subtabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }

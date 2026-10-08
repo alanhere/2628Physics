@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lessons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1><span id="siteTitle"></span></h1>
+    <p id="siteIntro"></p>
+  </header>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Sections"></div>
+  <div id="view" role="tabpanel"></div>
+</main>
+
+<dialog id="viewer" aria-label="Photo">
+  <form method="dialog"><button class="btn">Close</button></form>
+  <img id="viewerImg" alt="">
+</dialog>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

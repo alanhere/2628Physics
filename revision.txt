@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------
+# HOW TO ADD A REVISION RESOURCE
+# Copy a whole entry from below, paste it anywhere in this file, then change the words.
+# Resources are grouped by topic. Use exactly the same topic name each time.
+#
+# date: 2026-09-10
+# title: Forces summary sheet
+# topic: Forces
+# about: One page of the key equations and definitions.
+# link: Summary sheet | forces-summary.pdf
+# link: Flashcards | https://link-to-flashcards
+# link: Past questions | https://drive.google.com/file/d/XXXX/view?usp=sharing
+# video: Forces in ten minutes | https://www.youtube.com/watch?v=XXXXXXXXXXX
+#
+# date sets the order within a topic. It is not shown.
+# link can be repeated as many times as you like. Write: button label | link
+# A link can be a PDF file name from the revision folder on GitHub, or a full web or Drive link.
+# video, about and the extra lines explain: and example: are all optional.
+# ---------------------------------------------------------------
+
+date: 2026-09-10
+title: Motion summary sheet
+topic: Motion
+about: One page with every equation of motion and what each symbol means.
+link: Summary sheet | motion-summary.pdf
+link: Flashcards | https://example.com/motion-flashcards
+video: Motion in ten minutes | https://www.youtube.com/
+
+date: 2026-09-12
+title: Motion past questions
+topic: Motion
+about: Exam questions on speed, velocity and acceleration, with mark schemes.
+link: Questions | https://example.com/motion-questions
+link: Mark scheme | https://example.com/motion-answers
+
+date: 2026-10-01
+title: Forces summary sheet
+topic: Forces
+about: Newton's laws, friction and drag on one page.
+link: Summary sheet | forces-summary.pdf
+link: Flashcards | https://example.com/forces-flashcards
+
+date: 2026-10-05
+title: Electricity summary sheet
+topic: Electricity
+about: Circuit symbols, current, voltage, resistance and the key equations.
+link: Summary sheet | electricity-summary.pdf
+video: Circuits in ten minutes | https://www.youtube.com/
+
+date: 2026-10-06
+title: Answering six-mark questions
+topic: Exam technique
+about: How to plan and structure a longer answer, with two model answers.
+link: Guide | six-mark-guide.pdf

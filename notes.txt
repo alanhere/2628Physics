@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------
+# HOW TO ADD GUIDED NOTES
+# Copy a whole entry from below, paste it anywhere in this file, then change the words.
+# Notes are grouped by topic, and topics appear in the order you handed them out.
+#
+# date: 2026-09-10
+# title: Chapter 5: Ratio and percentages
+# topic: Number
+# about: Guided notes to complete in class.
+# notes: https://drive.google.com/file/d/XXXX/view?usp=sharing
+# completed: https://drive.google.com/file/d/YYYY/view?usp=sharing
+#
+# date is the day you gave the notes out. It sets the order, and it is not shown.
+# completed is optional. Add it when you want students to see the completed version.
+# Use exactly the same topic name each time, or the notes will be listed under a new heading.
+# ---------------------------------------------------------------
+
+date: 2026-09-08
+title: Chapter 3: Distance, speed and acceleration
+topic: Motion
+about: Guided notes to complete in class.
+notes: chapter-3.pdf
+completed: chapter-3-completed.pdf
+
+date: 2026-09-29
+title: Chapter 4: Forces and Newton's laws
+topic: Forces
+about: Resultant force, friction and drag.
+notes: chapter-4.pdf
+completed: chapter-4-completed.pdf
+
+date: 2026-10-06
+title: Chapter 5: Electric circuits
+topic: Electricity
+about: Current, charge, series and parallel circuits.
+notes: chapter-5.pdf
+
+date: 2026-10-20
+title: Chapter 6: Waves
+topic: Waves
+about: Wave types and wave speed.
+notes: chapter-6.pdf

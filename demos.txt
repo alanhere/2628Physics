@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------
+# HOW TO ADD A DEMONSTRATION
+# Copy a whole demonstration from below, paste it anywhere in this file, then change the words.
+#
+# date: 2026-10-06
+# title: Van de Graaff generator
+# video: Hair standing on end | https://www.youtube.com/watch?v=XXXXXXXXXXX
+# photos: 2026-10-06-1.jpg
+# notice: What students should look out for.
+# physics: The explanation.
+#
+# photos is optional. notice and physics can each be several lines: just repeat the label.
+# ---------------------------------------------------------------
+
+date: 2026-10-06
+title: Van de Graaff generator
+video: Hair standing on end | https://www.youtube.com/
+notice: The volunteer's hair spreads out and rises. Sparks jump to the metal dome when a rod is brought close.
+physics: The belt carries charge up to the dome. Charges of the same sign repel, so each hair pushes away from its neighbours.
+physics: A spark happens when the air can no longer insulate the gap.
+
+date: 2026-10-01
+title: Hammer and feather in a vacuum
+video: Falling with and without air | https://www.youtube.com/
+notice: In air the feather drifts down. With the air pumped out, both hit the bottom at the same moment.
+physics: Gravity accelerates every object at the same rate. Air resistance is the only reason the feather falls slowly.
+
+date: 2026-09-25
+title: Slinky waves
+video: Pushing and shaking a spring | https://www.youtube.com/
+notice: Push along the spring and a pulse of squashed coils travels down it. Shake it sideways and a different kind of wave appears.
+physics: Pushing along the spring makes a longitudinal wave. Shaking it sideways makes a transverse wave. In both, the energy travels but each coil only moves back and forth.
+
+date: 2026-09-18
+title: Swinging bowling ball
+video: Will it hit? | https://www.youtube.com/
+notice: The ball is released from the tip of the nose, swings away and comes back, stopping just short.
+physics: Gravitational potential energy turns into kinetic energy and back again. Some energy is always lost to air resistance, so the ball never returns higher than it started.
