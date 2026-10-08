@@ -36,6 +36,19 @@ q: 3 | https://example.com/q3
 q: 4 | https://example.com/q4
 video: Worked answers to questions 5 to 8 | https://www.youtube.com/
 
+date: 2026-10-09
+title: Critical angle 
+homework: Complete the red circled sections in the notes 
+photos: critical1.png, critical2.png, critical3.png
+solutions: https://example.com/solutions
+q: 1 | https://example.com/q1
+q: 2 | https://example.com/q2
+q: 3 | https://example.com/q3
+q: 4 | https://example.com/q4
+video: Experiment to find critical angle  | https://www.youtube.com/watch?v=d7U3k2XtzVU
+
+
+
 date: 2026-10-07
 title: Current and charge
 homework: Exercise 5B, questions 1 to 6 | https://example.com/homework
