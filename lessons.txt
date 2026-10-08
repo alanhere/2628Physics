@@ -74,3 +74,10 @@ title: Distance-time graphs
 homework: Exercise 3A, questions 1 to 6 | https://example.com/homework
 photos: sample-board-1.jpg, sample-board-2.jpg
 solutions: https://example.com/solutions
+
+date: 2026-10-10
+title: total internal refections
+homework: book page 45 questions 6 to 10 | https://drive.google.com/file/d/1paQQxnuSAueSiNgKCPNegQlSpR4LBY9A/view?usp=share_link
+photos: 2026-10-10-1.jpg, 2026-10-10-2.jpg, 2026-10-10-3.jpg
+solutions: https://drive.google.com/file/d/1paQQxnuSAueSiNgKCPNegQlSpR4LBY9A/view?usp=share_link
+video: https://www.youtube.com/watch?v=d7U3k2XtzVU
