@@ -109,8 +109,7 @@
     return m ? m[1] : "";
   }
   var playSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l14 8-14 8z"/></svg>';
-  function videoHtml(v) {
-    if (!v) return '<p class="sub">No video yet.</p>';
+  function oneVideo(v) {
     var l = split2(v), id = ytId(l.url), title = l.text || "Watch the video";
     if (!l.url) return '<p>' + esc(title) + '</p>';
     if (id) {
@@ -118,6 +117,13 @@
         '<p class="vcap">' + esc(title) + '</p><a class="btn" href="' + esc(l.url) + '" target="_blank" rel="noopener">Open on YouTube</a>';
     }
     return '<p>' + esc(title) + '</p><a class="btn" href="' + esc(l.url) + '" target="_blank" rel="noopener">Watch the video</a>';
+  }
+  /* v can be one video line or a list of them (the page shows up to 3) */
+  function videoHtml(v) {
+    var arr = Array.isArray(v) ? v : (v ? [v] : []);
+    arr = arr.filter(function (x) { return x && x.trim(); }).slice(0, 3);
+    if (!arr.length) return '<p class="sub">No video yet.</p>';
+    return arr.map(function (x) { return '<div class="videoitem">' + oneVideo(x) + "</div>"; }).join("");
   }
 
   function blk(t, h) { return '<div class="block"><h3>' + esc(t) + "</h3>" + h + "</div>"; }
@@ -191,17 +197,13 @@
 
   var BODY = {
     lesson: function (it, prev) {
-      var h = "", hw = first(it, "homework");
-      if (hw) {
-        var l = split2(hw);
-        h += blk("Tonight’s homework", (l.text ? '<p class="sub">' + esc(l.text) + "</p>" : "") +
-          (l.url ? '<a class="btn main" href="' + esc(l.url) + '" target="_blank" rel="noopener">Open homework</a>' : ""));
-      } else {
-        h += blk("Tonight’s homework", '<p class="sub">No homework tonight.</p>');
-      }
-      var ph = csv(it, "photos");
-      h += blk("From the board", ph.length ? photosHtml(ph) : '<p class="sub">Photos will be added soon.</p>');
+      var h = "";
 
+      /* 1. A brief outline of what we did in class */
+      var sm = all(it, "summary");
+      if (sm.length) h += blk("What we did in class", paras(sm));
+
+      /* 2. Last night's homework */
       var sol = first(it, "solutions"), qs = all(it, "q"), s = "";
       if (sol || qs.length) {
         if (prev) s += '<p class="sub">Homework set on ' + esc(day(prev.date)) + ".</p>";
@@ -215,14 +217,49 @@
       } else {
         s = '<p class="sub">' + (prev ? "Solutions will be added soon." : "No homework was set before this lesson.") + "</p>";
       }
-      h += blk("Solutions to last night’s homework", s);
-      h += blk("Video help", videoHtml(first(it, "video")));
+      h += blk("Last night’s homework", s);
+
+      /* 3. Images from the board */
+      var ph = csv(it, "photos"), bd = all(it, "board"), bh = "";
+      if (bd.length) {
+        bh += '<div class="actions">' + bd.map(function (b, i) {
+          var x = split2(b);
+          if (!x.url) return "";
+          var label = x.text || (bd.length > 1 ? "Open board photos " + (i + 1) : "Open board photos");
+          return '<a class="btn" href="' + esc(fileUrl("board", x.url)) + '" target="_blank" rel="noopener">' + esc(label) + "</a>";
+        }).join("") + "</div>";
+      }
+      if (ph.length) bh += photosHtml(ph);
+      h += blk("From the board", bh || '<p class="sub">Photos will be added soon.</p>');
+
+      /* 4. Video help */
+      h += blk("Video help", videoHtml(all(it, "video")));
+
+      /* Optional: guided notes for this lesson */
       var nt = first(it, "notes");
       if (nt) {
         var n = split2(nt);
         h += blk("Guided notes", (n.text ? '<p class="sub">' + esc(n.text) + "</p>" : "") +
           (n.url ? '<a class="btn" href="' + esc(fileUrl("notes", n.url)) + '" target="_blank" rel="noopener">Open notes</a>' : ""));
       }
+
+      /* 5. Homework for today */
+      var hw = first(it, "homework");
+      if (hw) {
+        var l = split2(hw);
+        h += blk("Today’s homework", (l.text ? '<p class="sub">' + esc(l.text) + "</p>" : "") +
+          (l.url ? '<a class="btn main" href="' + esc(l.url) + '" target="_blank" rel="noopener">Open homework</a>' : ""));
+      } else {
+        h += blk("Today’s homework", '<p class="sub">No homework today.</p>');
+      }
+      /* Exit quiz (optional, hidden when no link) */
+      var eq = first(it, "exitquiz");
+      if (eq) {
+        var e = split2(eq);
+        if (e.url) h += blk("Exit quiz", (e.text ? '<p class="sub">' + esc(e.text) + "</p>" : "") +
+          '<a class="btn" href="' + esc(e.url) + '" target="_blank" rel="noopener">Open exit quiz</a>');
+      }
+
       return h;
     },
     investigation: function (it) {
@@ -239,7 +276,7 @@
       return h || blk("Details", '<p class="sub">Nothing added yet.</p>');
     },
     demo: function (it) {
-      var h = blk("Watch", videoHtml(first(it, "video")));
+      var h = blk("Watch", videoHtml(all(it, "video")));
       var ph = csv(it, "photos");
       if (ph.length) h += blk("Photos", photosHtml(ph));
       if (first(it, "notice")) h += blk("What to notice", paras(all(it, "notice")));
@@ -404,7 +441,7 @@
           if (first(it, "about")) body += '<div class="block"><p>' + esc(first(it, "about")) + "</p></div>";
           if (all(it, "explain").length) body += blk("The idea", paras(all(it, "explain")));
           if (all(it, "example").length) body += blk("Worked example", paras(all(it, "example")));
-          if (first(it, "video")) body += blk("Watch", videoHtml(first(it, "video")));
+          if (first(it, "video")) body += blk("Watch", videoHtml(all(it, "video")));
           var links = all(it, "link");
           if (links.length) {
             body += blk(tab.linksHeading || "Resources", '<div class="actions">' + links.map(function (l, i) {
